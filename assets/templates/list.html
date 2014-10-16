@@ -1,0 +1,31 @@
+<table class="table">
+<thead>
+    <tr>
+        <th>#</th>
+        <th>format</th>
+        <th>freq</th>
+        <th>name</th>
+        <th>hostname</th>
+        <th>deviceid</th>
+        <th>created_at</th>
+        <th>action</th>
+    </tr>
+</thead>
+<tbody>
+    <tr ng-repeat="log in logs">
+        <td><a ng-click="modal(log)">{{ log.id }}</a></td>
+        <td>{{ log.format }}</td>
+        <td>{{ log.freq }}</td>
+        <td>{{ log.name }}</td>
+        <td>{{ log.hostname }}</td>
+        <td>{{ log.deviceid }}</td>
+        <td>{{ log.created_at | date:'medium' }}</td>
+        <td>
+            <button class="btn btn-default" ng-click="post(log)">post</button>
+        </td>
+    </tr>
+</tbody>
+</table>
+
+<irlog-show-modal></irlog-show-modal>
+<div growl></div>
