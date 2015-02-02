@@ -22,6 +22,7 @@ var (
 	agent     = flag.Bool("agent", true, "agent")
 )
 
+//go:generate go-bindata -ignore=.DS_Store assets/...
 func main() {
 	flag.Parse()
 
